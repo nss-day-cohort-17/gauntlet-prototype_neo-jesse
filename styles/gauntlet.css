@@ -39,19 +39,12 @@ body {
 
 }
 
-#battleground {
-  background:red;
-}
-
 .battleground-body {
-<<<<<<< HEAD
-  background: url("http://vignette3.wikia.nocookie.net/powerlisting/images/b/b0/Battlefield.jpg/revision/latest?cb=20120630021542");
+  background: url("");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-=======
-  background-color: red;
-}
->>>>>>> master
 
 /*
   Button styles
@@ -129,4 +122,31 @@ body {
 }
 #bareHands {
   /*padding-right: 5em;*/
+}
+
+#attackBtn {
+  max-width: 150px;
+  vertical-align: center;
+
+}
+
+/*health bars*/
+
+
+.healthBars {
+  justify-content: space-around;
+  vertical-align: center;
+}
+
+.btnStyleAttack {
+
+}
+
+.battle-screen {
+  height: 700px;
+  border:1px solid black;
+}
+
+.filler {
+  height: 700px;
 }
