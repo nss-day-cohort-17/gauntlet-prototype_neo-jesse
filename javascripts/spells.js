@@ -19,7 +19,7 @@ Gauntlet.SpellBook.Spell = function() {
     return this.name + " of " + this.type + " for " + this.damage + " damage!";
   }
 };
-
+console.log()
 /*
   An elemental sphere that can be cast by a magical class
  */

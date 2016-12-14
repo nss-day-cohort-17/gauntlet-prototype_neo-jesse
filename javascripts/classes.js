@@ -26,6 +26,7 @@ Gauntlet.GuildHall.PlayerClass = function() {
       - Berserker
       - Monk
  */
+ 
 Gauntlet.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
@@ -116,13 +117,13 @@ Gauntlet.GuildHall.Sorcerer = function() {
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 
-
 /*
     STEALTH CLASSES
       - Thief
       - Ninja
       - Assassin
  */
+<<<<<<< HEAD
 
 Gauntlet.GuildHall.Stealth = function () {
   this.name = "Stealth";
@@ -155,3 +156,5 @@ Gauntlet.GuildHall.Assassin = function() {
   this.stealthBonus = this.stealthBonus + 35;
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
+=======
+>>>>>>> master

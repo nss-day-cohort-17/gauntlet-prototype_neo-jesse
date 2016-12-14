@@ -1,21 +1,4 @@
-/*
-  Test code to generate a human player and an orc player
- */
-var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new BroadSword());
-console.log(orc.toString());
-
-/*
-  Test code to generate a spell
- */
-var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
 
 
 $(document).ready(function() {
@@ -41,10 +24,12 @@ $(document).ready(function() {
         break;
       case "card--class":
         moveAlong = ($("player-name").val() !== "");
+        break
       case 'card--battlefield':
         moveAlong = ($("#player-name").val() !== "");
         break;
     }
+
 
     if (moveAlong) {
       $(".card").hide();
@@ -58,8 +43,26 @@ $(document).ready(function() {
       $('.card--weapon').hide();
 
       $('body').addClass('battleground-body');
+
+      var spell = new Gauntlet.SpellBook.Sphere();
+      console.log("spell: ", spell.toString());
+
+      setTimeout(explode, (Math.random() * 8000));
+
     }
+
   });
+
+  $(".class__button").click(function(e) {
+    if ($(this).hasClass('stealthClass') === true) {
+      
+      $('.fighterClass').hide();
+      $('.magicalClass').hide();
+      $('.stealthClass').hide()
+      $('#character-select').find('div').show();
+      console.log('')
+    }
+  })
 
   /*
     When the back button clicked, move back a view
@@ -71,3 +74,20 @@ $(document).ready(function() {
   });
 
 });
+
+/*
+  Test code to generate a human player and an orc player
+ */
+var warrior = new Gauntlet.Combatants.Human();
+warrior.setWeapon(new WarAxe());
+warrior.generateClass();  // This will be used for "Surprise me" option
+console.log(warrior.toString());
+
+var orc = new Gauntlet.Combatants.Orc();
+orc.generateClass();
+orc.setWeapon(new BroadSword());
+console.log(orc.toString());
+
+/*
+  Test code to generate a spell
+ */
