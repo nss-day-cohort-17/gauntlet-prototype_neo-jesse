@@ -65,13 +65,13 @@ Gauntlet.GuildHall.Monk = function() {
 Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
 
 
-/*
-    MAGICAL CLASSES
-      - Shaman
-      - Wizard
-      - Conujurer
-      - Sorcerer
- */
+
+    // MAGICAL CLASSES
+    //   - Shaman
+    //   - Wizard
+    //   - Conujurer
+    //   - Sorcerer
+
 Gauntlet.GuildHall.Mage = function() {
   this.name = "Mage";
   this.magical = true;
