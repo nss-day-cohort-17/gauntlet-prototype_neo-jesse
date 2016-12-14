@@ -22,7 +22,7 @@ $(document).ready(function() {
   /*
     Show the initial view that accepts player name
    */
-  $("#player-setup").show();
+  // $("#player-setup").show();
 
   /*
     When any button with card__link class is clicked,
