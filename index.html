@@ -30,10 +30,60 @@
         </a>
       </div>
     </section>
-
-    <section id="class-select" class="card card--class">
+      <!-- Choose class -->
+    <section id="classSelect" class="card card--class">
       <div class="card__prompt">
-        <div>CHOOSE YOUR PATH</div>
+        <div>CHOOSE YOUR CLASS</div>
+        <div>
+          <a class="card__back btn btn--small"
+             href="#"
+             previous="card--name">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">Back</span>
+          </a>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-offset-4">
+            <div class="weapon__button">
+            <img id="" src="">
+              <a class="class__link btn btn--big btn--blue" href="#">
+                <span class="btn__prompt">></span>
+                <span class="btn__text" id="fighterClass">Fighter Class</span>
+              </a>
+      </div>
+      <div class="weapon__button">
+            <img id="" src="">
+              <a class="class__link btn btn--big btn--blue" href="#">
+                <span class="btn__prompt">></span>
+                <span class="btn__text" id="magicalClass">Magical Class</span>
+              </a>
+            </div>
+
+            <div class="weapon__button">
+            <img id="" src="">
+              <a class="class__link btn btn--big btn--blue" href="#">
+                <span class="btn__prompt">></span>
+                <span class="btn__text" id="stealthClass">Stealth Class</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="card__button">
+          <a class="card__link btn btn--big btn--orange"
+             href="#"
+             next="card--class">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Select Character</span>
+          </a>
+        </div>
+    </section>
+
+    <section id="character-select" class="card card--character">
+      <div class="card__prompt">
+        <div>CHOOSE YOUR CHARACTER</div>
         <div>
           <a class="card__back btn btn--small"
              href="#"
@@ -153,7 +203,7 @@
         </div>
       </div>
 
-     start weapon list here
+     <!-- start weapon list here -->
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-offset-4">
@@ -166,7 +216,7 @@
       </div>
 
       <div class="weapon__button">
-      <img id="weaponImg" src="https://images-na.ssl-images-amazon.com/images/I/61UkYN9wUEL._SL1072_.jpg">
+          <img id="weaponImg" src="https://images-na.ssl-images-amazon.com/images/I/61UkYN9wUEL._SL1072_.jpg">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="dagger">Dagger</span>
@@ -193,14 +243,14 @@
       </div>
 
       <div id="defeat" class="card__button">
-        <a id="defeatLink" class="card__link btn btn--big btn--orange" 
-           href="#" 
+        <a id="defeatLink" class="card__link btn btn--big btn--orange"
+           href="#"
            next="card--battleground">
           <span class="btn__prompt span-defeat">></span>
           <span class="btn__text span-defeat">defeat your enemies</span>
         </a>
       </div>
-    </section> 
+    </section>
 
 
     <section id="battleground" class="card card--battleground">
