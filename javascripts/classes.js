@@ -26,6 +26,7 @@ Gauntlet.GuildHall.PlayerClass = function() {
       - Berserker
       - Monk
  */
+ 
 Gauntlet.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
