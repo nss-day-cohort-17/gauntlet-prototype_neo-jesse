@@ -38,6 +38,13 @@ body {
   text-align: center;
 }
 
+#battleground {
+  background:red;
+}
+
+.battleground-body {
+  background-color: red;
+}
 
 /*
   Button styles
