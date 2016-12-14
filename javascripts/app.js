@@ -31,6 +31,7 @@ $(document).ready(function() {
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
+    console.log(nextCard);
 
     switch (nextCard) {
       case "card--class":
