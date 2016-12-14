@@ -260,18 +260,26 @@
       </div>
     </section>
 
-
-    <section id="battleground" class="card card--battleground">
-      <div>
-        <div>
-          <progress id="health" value="#" max="#"></progress>
-          <progress id="enemyHealth" value="#" max="#"></progress>
-        </div>
+      <section id="battleground" class="card card--battleground">
+          <div class="battle-screen container">
+          <div class="row filler"></div>
+          <div class="row">
+              <span id="healthBars">
+                  <div class="col-md-2 col-md-offset1">
+                    <progress class="progressBar" id="health" value="#" max="#">""</progress>
+                  </div>
+                  <div class="col-md-2 col-md-offset1">
+                    <progress class="progressBar" id="enemyHealth" value="#" max="#">""</progress>
+                </div>
 <!--          var health is document.get...
          health.value = health.value (add, whatever) -->
-          <button class="btn btn-primary" role="button" type="button">Attack!</button>
-      </div>
-    </section>
+                <button class="btn btn-primary col-md-2 col-md-offset1" id="attackBtn" role="button" type="button">Attack!</button>
+                <button class="btn btn-danger col-md-2 col-md-offset1" id="exitBtn" role="button" type="button">Run</button>
+              </span>
+            </div>
+         </div>
+        </div>
+      </section>
 
 
   </article>
