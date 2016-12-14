@@ -40,6 +40,8 @@ Gauntlet.Combatants.Player = function(name) {
   };
 };
 
+console.log(Gauntlet.Combatants.Player.playerName)
+
 Gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 }
@@ -89,4 +91,3 @@ Gauntlet.Combatants.Monster = function() {
 };
 
 Gauntlet.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();
-

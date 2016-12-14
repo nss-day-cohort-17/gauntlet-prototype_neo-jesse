@@ -26,6 +26,7 @@ Gauntlet.GuildHall.PlayerClass = function() {
       - Berserker
       - Monk
  */
+ 
 Gauntlet.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
@@ -65,13 +66,13 @@ Gauntlet.GuildHall.Monk = function() {
 Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
 
 
-/*
-    MAGICAL CLASSES
-      - Shaman
-      - Wizard
-      - Conujurer
-      - Sorcerer
- */
+
+    // MAGICAL CLASSES
+    //   - Shaman
+    //   - Wizard
+    //   - Conujurer
+    //   - Sorcerer
+
 Gauntlet.GuildHall.Mage = function() {
   this.name = "Mage";
   this.magical = true;
@@ -116,11 +117,44 @@ Gauntlet.GuildHall.Sorcerer = function() {
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 
-
 /*
     STEALTH CLASSES
       - Thief
       - Ninja
       - Assassin
  */
+<<<<<<< HEAD
 
+Gauntlet.GuildHall.Stealth = function () {
+  this.name = "Stealth";
+  this.healthBonus = this.healthBonus - 30;
+  this.speedBonus = this.speedBonus + 20;
+  this.stealthBonus = this.stealthBonus + 15;
+};
+Gauntlet.GuildHall.Stealth.prototype = new Gauntlet.GuildHall.PlayerClass();
+
+Gauntlet.GuildHall.Thief = function() {
+  this.name = "Thief";
+  this.healthBonus = this.healthBonus + 10;
+  this.speedBonus = this.speedBonus + 15;
+  this.stealthBonus = this.stealthBonus + 20;
+};
+Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Stealth();
+
+Gauntlet.GuildHall.Ninja = function() {
+  this.name = "Ninja";
+  this.healthBonus = this.healthBonus + 15;
+  this.speedBonus = this.speedBonus + 10;
+  this.stealthBonus = this.stealthBonus + 15;
+};
+Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Stealth();
+
+Gauntlet.GuildHall.Assassin = function() {
+  this.name = "Assassin";
+  this.healthBonus = this.healthBonus + 0;
+  this.speedBonus = this.speedBonus +30;
+  this.stealthBonus = this.stealthBonus + 35;
+};
+Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
+=======
+>>>>>>> master
