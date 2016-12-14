@@ -11,7 +11,7 @@
 
 <body>
 
-  <article id="game-container">
+ <!--  <article id="game-container">
 
     <section id="player-setup" class="card card--name">
       <div class="card__prompt">
@@ -161,11 +161,21 @@
           <span class="btn__text">defeat your enemies</span>
         </a>
       </div>
-    </section>
+    </section> -->
 
     <section id="battleground" class="card card--battleground"></section>
+      <div>
+        <div>
+          <progress id="health" value="#" max="#"></progress>
+          <progress id="enemyHealth" value="#" max="#"></progress>
+        </div>
+         <!-- var health is document.get...
+         health.value = health.value (add, whatever) -->
+          <button class="btn btn-primary" role="button" type="button">Attack!</button>
+      </div>
 
-  </article>
+
+  <!-- </article> -->
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/weapons.js"></script>

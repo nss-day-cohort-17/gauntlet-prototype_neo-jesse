@@ -38,6 +38,10 @@ body {
   text-align: center;
 }
 
+.battleground-body {
+  background: url("http://vignette3.wikia.nocookie.net/powerlisting/images/b/b0/Battlefield.jpg/revision/latest?cb=20120630021542");
+}
+
 
 /*
   Button styles
