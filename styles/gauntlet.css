@@ -21,7 +21,7 @@ body {
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
@@ -36,12 +36,22 @@ body {
   font-size: 1.1em;
   margin: 30px 0 0 0;
   text-align: center;
+
+}
+
+#battleground {
+  background:red;
 }
 
 .battleground-body {
+<<<<<<< HEAD
   background: url("http://vignette3.wikia.nocookie.net/powerlisting/images/b/b0/Battlefield.jpg/revision/latest?cb=20120630021542");
 }
 
+=======
+  background-color: red;
+}
+>>>>>>> master
 
 /*
   Button styles
@@ -106,4 +116,17 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+/*weapon styling*/
+#weaponImg {
+  height: 3em;
+  width: 6em;
+  /*margin-right: 5em;*/
+}
+#weaponHands {
+  height: 4em;
+  width: 6em;
+}
+#bareHands {
+  /*padding-right: 5em;*/
 }

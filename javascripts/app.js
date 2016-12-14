@@ -39,11 +39,23 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
+      case 'card--battlefield':
+        moveAlong = ($("#player-name").val() !== "");
+        break;
     }
 
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
+    }
+
+    if (e.target.id === 'defeatLink' || e.target.id === "defeat" || e.target.className === 'btn__text span-defeat') {
+
+      $('.card--battleground').show();
+
+      $('.card--weapon').hide();
+
+      $('body').addClass('battleground-body');
     }
   });
 
