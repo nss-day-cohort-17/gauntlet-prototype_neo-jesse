@@ -55,12 +55,25 @@ $(document).ready(function() {
 
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
-      
-      $('.fighterClass').hide();
-      $('.magicalClass').hide();
-      $('.stealthClass').hide()
-      $('#character-select').find('div').show();
-      console.log('')
+      $('#character-select').show();
+      $('#classSelect').hide();
+      $('.fighter').hide();
+      $('.magical').hide();
+      $('.stealth').show();
+    }
+    if ($(this).hasClass('fighterClass') === true) {
+      $('#character-select').show();
+      $('#classSelect').hide();
+      $('.fighter').show();
+      $('.magical').hide();
+      $('.stealth').hide();
+    }
+    if ($(this).hasClass('magicalClass') === true) {
+      $('#character-select').show();
+      $('#classSelect').hide();
+      $('.fighter').hide();
+      $('.magical').show();
+      $('.stealth').hide();
     }
   })
 

@@ -123,7 +123,6 @@ Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
       - Ninja
       - Assassin
  */
-<<<<<<< HEAD
 
 Gauntlet.GuildHall.Stealth = function () {
   this.name = "Stealth";
@@ -156,5 +155,3 @@ Gauntlet.GuildHall.Assassin = function() {
   this.stealthBonus = this.stealthBonus + 35;
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
-=======
->>>>>>> master
