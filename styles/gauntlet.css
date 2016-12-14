@@ -128,3 +128,8 @@ body {
 #bareHands {
   /*padding-right: 5em;*/
 }
+
+/*Class Select*/
+#classSelect {
+  text-align: center;
+}
