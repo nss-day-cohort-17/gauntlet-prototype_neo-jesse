@@ -154,7 +154,7 @@ Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Stealth();
 Gauntlet.GuildHall.Assassin = function() {
   this.name = "Assassin";
   this.healthBonus = this.healthBonus + 0;
-  this.speedBonus = this.speedBonus +30;
+  this.speedBonus = this.speedBonus + 30;
   this.stealthBonus = this.stealthBonus + 35;
 };
 Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
