@@ -65,8 +65,8 @@ $(document).ready(function() {
 
    // $('#health').progressbar('value', startingHealth);
 
-   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
-   document.getElementById('enemyInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
 
 
       console.log(newPlayer);
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
   });
 
- 
+
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
       $('#character-select').show('slow');
@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 
 //Battle function for Human//
-//Each time the attack button is clicked, the player's chosen character and the 
+//Each time the attack button is clicked, the player's chosen character and the
 //generated enemy should attack with their weapon
 //
 var damageInflicted;
