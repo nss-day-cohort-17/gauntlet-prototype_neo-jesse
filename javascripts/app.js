@@ -5,6 +5,8 @@ var newPlayerName;
 
 var newPlayerClass;
 
+// console.log(Gauntlet.)
+
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -63,6 +65,12 @@ $(document).ready(function() {
 
    // $('#health').progressbar('value', startingHealth);
 
+   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+
+
+      console.log(newPlayer);
+
    newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
 
       // var warrior = new Gauntlet.Combatants.Human();
@@ -70,11 +78,11 @@ $(document).ready(function() {
       // warrior.generateClass();  // This will be used for "Surprise me" option
       // console.log(warrior.toString());
 
-    var orc = new Gauntlet.Combatants.Orc();
-      orc.generateClass();
-      orc.setWeapon(new Gauntlet.Armory.Broadsword());
-      console.log(orc.toString());
-      console.log(orc)
+   //  var orc = new Gauntlet.Combatants.Orc();
+   //    orc.generateClass();
+   //    orc.setWeapon(new Gauntlet.Armory.Broadsword());
+   //    console.log(orc.toString());
+   //    console.log(orc)
    }
 
 
@@ -105,6 +113,14 @@ $(document).ready(function() {
       $('.stealth').hide();
     }
   })
+
+  //   $('.class__button').click(function (e) {
+  //   var typeText = this.innerText.slice(1);
+  //   var newTypeText = typeText.toLowerCase();
+  //   newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+  //   console.log(newTypeText)
+  //   newPlayer.class = new Gauntlet.GuildHall[newTypeText];
+  // })
 
   $('.type').click(function (e) {
     var typeText = this.innerText.slice(1);
@@ -151,11 +167,9 @@ var damageInflicted;
 var damageReceived;
 var attack;
 function inflictDamage() {
- 
-  // if ()
+
   console.log(newPlayer)
 }
-inflictDamage();
 //damage received is a function of the weapon
 //odds of getting hit are a function of intelligence
 //starting health newPlayer.health
@@ -168,10 +182,8 @@ inflictDamage();
 //evt listener for attack button--WORKS//
 $("#attackBtn").click(inflictDamage);
 
-// $(".card--battleground").keypress(function (e) {
-//   // if ( === 32) {
-//     alert("spaceAttack")
-//   // }
-//   })
-
-//
+$('.card--battleground').keypress(function (e) {
+  if (this.keyCode === 32) {
+    alert("spaceAttack")
+  }
+  })
