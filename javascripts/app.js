@@ -138,10 +138,22 @@ console.log(orc.toString());
 //Each time the attack button is clicked, the player's chosen character and the 
 //generated enemy should attack with their weapon
 //
+var damageInflicted;
+var damageReceived;
+var attack;
 function inflictDamage() {
-  
-  alert("damage!")
+ 
+  // if ()
+  console.log(newPlayer)
 }
+inflictDamage();
+//damage received is a function of the weapon
+//odds of getting hit are a function of intelligence
+//starting health newPlayer.health
+
+
+
+//once the damage is calculated, subtract that from the opponents' health
 
 
 //evt listener for attack button--WORKS//
