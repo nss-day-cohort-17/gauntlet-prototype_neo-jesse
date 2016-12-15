@@ -41,7 +41,7 @@ body {
 
 .battleground-body {
 
-  background: url("/Battlefield.jpg")  no-repeat center center fixed; 
+  background: url("/Battlefield.jpg")  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -107,6 +107,23 @@ body {
   left: 37px;
   float: left;
 }
+#attkDfndBtn {
+  max-width: 20em;
+  vertical-align: center;
+}
+
+#attackBtn{
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#exitBtn{
+width: 20%;
+margin-right: 40%;
+margin-left: 40%;
+margin-top: 2.5em;
+}
 
 .btn__text {
   padding: 0 50px 0 20px;
@@ -127,18 +144,29 @@ body {
 }
 
 
-#attackBtn {
-  max-width: 150px;
-  vertical-align: center;
-
-}
 
 /*health bars*/
 
 
-.healthBars {
+#healthBars {
   justify-content: space-around;
   vertical-align: center;
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 250px;
+  height: 20px;
+  /*background-color: #eee;*/
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+#health{
+  /*margin-top: 5em;*/
+}
+
+#enemyHealth{
+margin-top: 20em !important;
+background-color: orange !important;
 }
 
 .btnStyleAttack {
