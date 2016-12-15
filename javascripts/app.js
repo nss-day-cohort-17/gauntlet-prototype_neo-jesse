@@ -6,6 +6,19 @@ var newPlayerName;
 var newPlayerClass;
 
 
+      var orc = new Gauntlet.Combatants.Orc();
+      orc.generateClass();
+      orc.setWeapon(new Gauntlet.Armory.Broadsword());
+
+
+      // var warrior = new Gauntlet.Combatants.Human();
+      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+      // warrior.generateClass();  // This will be used for "Surprise me" option
+      // console.log(warrior.toString());
+
+
+
+// console.log(Gauntlet.)
 
 $(document).ready(function() {
   /*
@@ -61,28 +74,28 @@ $(document).ready(function() {
 
       $('body').addClass('battleground-body');
 
-   //  var startingHealth = newPlayer.health + newPlayer.species.healthBonus
+    var startingHealth = newPlayer.health + newPlayer.species.healthBonus
 
-   // $('#health').progressbar('value', startingHealth);
+    var enemyHealth = orc.health;
 
-   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
-   document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   $('#health').val(startingHealth);
+
+   $('#enemyHealth').val(enemyHealth);
+
+   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
+
 
 
       console.log(newPlayer);
 
-   newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+      newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+      console.log(orc)
 
-      // var warrior = new Gauntlet.Combatants.Human();
-      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
-      // warrior.generateClass();  // This will be used for "Surprise me" option
-      // console.log(warrior.toString());
-
-
-    var orc = new Gauntlet.Combatants.Orc();
-      orc.generateClass();
-      orc.setWeapon(new Gauntlet.Armory.Broadsword());
-      console.log(orc.toString());
+    // var orc = new Gauntlet.Combatants.Orc();
+    //   orc.generateClass();
+    //   orc.setWeapon(new Gauntlet.Armory.Broadsword());
+    //   console.log(orc.toString());
       // console.log(orc)
 
    }
@@ -149,6 +162,7 @@ $(document).ready(function() {
   });
 
 
+
 });
 
 /*
@@ -182,6 +196,7 @@ var attack;
 //damage received is same formula for given, will change based on chars of
 //enemy
     // var damageReceived = orc.weapon / whatever
+
 
     var attackSuccess = newPlayer.intelligence;
     console.log(attackSuccess)
