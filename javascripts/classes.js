@@ -7,6 +7,7 @@ Gauntlet.GuildHall = {};
 /*
   Base function for a player, or enemy, class (profession)
  */
+ 
 Gauntlet.GuildHall.PlayerClass = function() {
   this.name = "Beggar";
   this.healthBonus = 0;
@@ -18,6 +19,8 @@ Gauntlet.GuildHall.PlayerClass = function() {
     return this.name;
   }
 };
+
+
 
 /*
     FIGHTER CLASSES
