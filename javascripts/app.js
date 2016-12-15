@@ -1,6 +1,10 @@
 
 var newPlayer;
 
+var newPlayerName;
+
+var newPlayerClass;
+
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -12,16 +16,11 @@ $(document).ready(function() {
     move on to the next view.
    */
 
-
-
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
 
-     var newPlayerName = $('#player-name').val();
-     console.log(newPlayerName)
-
-     newPlayer = new Gauntlet.Combatants.Player(newPlayerName);
+     newPlayerName = $('#player-name').val();
 
       switch (nextCard) {
       case "card--character":
@@ -29,19 +28,27 @@ $(document).ready(function() {
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
+        // newPlayer = new Gauntlet.GuildHall.Sorcerer();
+        // console.log(newPlayer)
         break;
       case "card--class":
         moveAlong = ($("player-name").val() !== "");
+        // newPlayer = new Gauntlet.Combatants.Player(newPlayerName);
+        // console.log(newPlayer)
         break
-      case 'card--battlefield':
+      case 'card--battleground':
         moveAlong = ($("#player-name").val() !== "");
+        // newPlayer.weapon = WarAxe;
+        console.log(newPlayer)
         break;
+
     }
 
 
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show('slow');
+
     }
 
     if (e.target.id === 'defeatLink' || e.target.id === "defeat" || e.target.className === 'btn__text span-defeat') {
@@ -52,10 +59,20 @@ $(document).ready(function() {
 
       $('body').addClass('battleground-body');
 
-    }
+      var warrior = new Gauntlet.Combatants.Human();
+warrior.setWeapon(new Gauntlet.Armory.Waraxe());
+warrior.generateClass();  // This will be used for "Surprise me" option
+console.log(warrior.toString());
+
+var orc = new Gauntlet.Combatants.Orc();
+orc.generateClass();
+orc.setWeapon(new Gauntlet.Armory.Broadsword());
+console.log(orc.toString());
+   }
 
   });
 
+ 
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
       $('#character-select').show('slow');
@@ -63,8 +80,6 @@ $(document).ready(function() {
       $('.fighter').hide();
       $('.magical').hide();
       $('.stealth').show();
-      newPlayer = new Gauntlet.GuildHall.Stealth();
-      console.log(newPlayer)
     }
     if ($(this).hasClass('fighterClass') === true) {
       $('#character-select').show('slow');
@@ -72,8 +87,6 @@ $(document).ready(function() {
       $('.fighter').show();
       $('.magical').hide();
       $('.stealth').hide();
-      newPlayer = new Gauntlet.GuildHall.Fighter();
-      console.log(newPlayer)
     }
     if ($(this).hasClass('magicalClass') === true) {
       $('#character-select').show('slow');
@@ -81,10 +94,22 @@ $(document).ready(function() {
       $('.fighter').hide();
       $('.magical').show();
       $('.stealth').hide();
-      newPlayer = new Gauntlet.GuildHall.Mage();
     }
   })
 
+  $('.type').click(function (e) {
+    var typeText = this.innerText.slice(1);
+    var newTypeText = typeText.toLowerCase();
+    newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+    newPlayer = new Gauntlet.GuildHall[newTypeText];
+  })
+
+ $('.weapon__button').click(function (e) {
+    var typeText = this.innerText.slice(2);
+    var newTypeText = typeText.toLowerCase();
+    newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+    newPlayer.weapon = new Gauntlet.Armory[newTypeText];
+  })
 
 
   /*
@@ -101,16 +126,31 @@ $(document).ready(function() {
 /*
   Test code to generate a human player and an orc player
  */
-var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new BroadSword());
-console.log(orc.toString());
 
 /*
   Test code to generate a spell
  */
+
+
+
+//Battle function for Human//
+//Each time the attack button is clicked, the player's chosen character and the 
+//generated enemy should attack with their weapon
+//
+function inflictDamage() {
+  
+  alert("damage!")
+}
+
+
+//evt listener for attack button--WORKS//
+$("#attackBtn").click(inflictDamage);
+
+// $(".card--battleground").keypress(function (e) {
+//   // if ( === 32) {
+//     alert("spaceAttack")
+//   // }
+//   })
+
+//
