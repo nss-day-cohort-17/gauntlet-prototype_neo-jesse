@@ -5,6 +5,8 @@ var newPlayerName;
 
 var newPlayerClass;
 
+
+
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -74,7 +76,7 @@ $(document).ready(function() {
       orc.generateClass();
       orc.setWeapon(new Gauntlet.Armory.Broadsword());
       console.log(orc.toString());
-      console.log(orc)
+      // console.log(orc)
    }
 
 
@@ -130,6 +132,7 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+
 });
 
 /*
@@ -150,15 +153,33 @@ $(document).ready(function() {
 var damageInflicted;
 var damageReceived;
 var attack;
-function inflictDamage() {
- 
-  // if ()
-  console.log(newPlayer)
+
+  function inflictDamage() {
+//healthpoints is health plus healthbonus which can be negative
+  var healthPoints = newPlayer.health + newPlayer.species.healthBonus;
+
+    //damage to enemy is ((strength + strengthBonus) divided by weapon damage)
+    // times 2
+    var damageInflicted = ((newPlayer.species.strengthBonus +
+    newPlayer.strength) / (newPlayer.weapon.damage)) * 2;
+
+//damage received is same formula for given, will change based on chars of
+//enemy
+    // var damageReceived = orc.weapon / whatever
+
+    var attackSuccess = newPlayer.intelligence;
+    console.log(attackSuccess)
+
+
+ if (healthPoints === 0) {
+  $("#attackBtn").button("disable");
+  alert("Better luck next time, loser");
+ // } else if {
+
+  }
 }
-inflictDamage();
-//damage received is a function of the weapon
-//odds of getting hit are a function of intelligence
-//starting health newPlayer.health
+
+$("#attackBtn").click(inflictDamage);
 
 
 
@@ -166,7 +187,7 @@ inflictDamage();
 
 
 //evt listener for attack button--WORKS//
-$("#attackBtn").click(inflictDamage);
+
 
 // $(".card--battleground").keypress(function (e) {
 //   // if ( === 32) {
