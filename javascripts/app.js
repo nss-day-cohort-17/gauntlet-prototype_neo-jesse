@@ -1,21 +1,29 @@
 
-
+var newPlayer;
 
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
    */
-  $("#player-setup").show();
+  $("#player-setup").show('slow');
 
   /*
     When any button with card__link class is clicked,
     move on to the next view.
    */
+
+
+
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
 
-    switch (nextCard) {
+     var newPlayerName = $('#player-name').val();
+     console.log(newPlayerName)
+
+     newPlayer = new Gauntlet.Combatants.Player(newPlayerName);
+
+      switch (nextCard) {
       case "card--character":
         moveAlong = ($("#player-name").val() !== "");
         break;
@@ -33,21 +41,16 @@ $(document).ready(function() {
 
     if (moveAlong) {
       $(".card").hide();
-      $("." + nextCard).show();
+      $("." + nextCard).show('slow');
     }
 
     if (e.target.id === 'defeatLink' || e.target.id === "defeat" || e.target.className === 'btn__text span-defeat') {
 
-      $('.card--battleground').show();
+      $('.card--battleground').show('slow');
 
       $('.card--weapon').hide();
 
       $('body').addClass('battleground-body');
-
-      var spell = new Gauntlet.SpellBook.Sphere();
-      console.log("spell: ", spell.toString());
-
-      setTimeout(explode, (Math.random() * 8000));
 
     }
 
@@ -55,27 +58,34 @@ $(document).ready(function() {
 
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
-      $('#character-select').show();
+      $('#character-select').show('slow');
       $('#classSelect').hide();
       $('.fighter').hide();
       $('.magical').hide();
       $('.stealth').show();
+      newPlayer = new Gauntlet.GuildHall.Stealth();
+      console.log(newPlayer)
     }
     if ($(this).hasClass('fighterClass') === true) {
-      $('#character-select').show();
+      $('#character-select').show('slow');
       $('#classSelect').hide();
       $('.fighter').show();
       $('.magical').hide();
       $('.stealth').hide();
+      newPlayer = new Gauntlet.GuildHall.Fighter();
+      console.log(newPlayer)
     }
     if ($(this).hasClass('magicalClass') === true) {
-      $('#character-select').show();
+      $('#character-select').show('slow');
       $('#classSelect').hide();
       $('.fighter').hide();
       $('.magical').show();
       $('.stealth').hide();
+      newPlayer = new Gauntlet.GuildHall.Mage();
     }
   })
+
+
 
   /*
     When the back button clicked, move back a view
