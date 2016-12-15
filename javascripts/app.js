@@ -131,3 +131,25 @@ console.log(orc.toString());
 /*
   Test code to generate a spell
  */
+
+
+
+//Battle function for Human//
+//Each time the attack button is clicked, the player's chosen character and the 
+//generated enemy should attack with their weapon
+//
+function inflictDamage() {
+  
+  alert("damage!")
+}
+
+
+//evt listener for attack button--WORKS//
+$("#attackBtn").click(inflictDamage);
+// $(".card--battleground").keypress(function (e) {
+//   // if ( === 32) {
+//     alert("spaceAttack")
+//   // }
+//   })
+
+//
