@@ -33,8 +33,8 @@ $(document).ready(function() {
         break;
       case "card--class":
         moveAlong = ($("player-name").val() !== "");
-        // newPlayer = new Gauntlet.Combatants.Player(newPlayerName);
-        // console.log(newPlayer)
+        newPlayer = new Gauntlet.Combatants.Player(newPlayerName);
+        console.log(newPlayer)
         break
       case 'card--battleground':
         moveAlong = ($("#player-name").val() !== "");
@@ -59,16 +59,25 @@ $(document).ready(function() {
 
       $('body').addClass('battleground-body');
 
-      var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new Gauntlet.Armory.Waraxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+   //  var startingHealth = newPlayer.health + newPlayer.species.healthBonus
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new Gauntlet.Armory.Broadsword());
-console.log(orc.toString());
+   // $('#health').progressbar('value', startingHealth);
+
+   newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+
+      // var warrior = new Gauntlet.Combatants.Human();
+      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+      // warrior.generateClass();  // This will be used for "Surprise me" option
+      // console.log(warrior.toString());
+
+    var orc = new Gauntlet.Combatants.Orc();
+      orc.generateClass();
+      orc.setWeapon(new Gauntlet.Armory.Broadsword());
+      console.log(orc.toString());
+      console.log(orc)
    }
+
+
 
   });
 
@@ -101,7 +110,7 @@ console.log(orc.toString());
     var typeText = this.innerText.slice(1);
     var newTypeText = typeText.toLowerCase();
     newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
-    newPlayer = new Gauntlet.GuildHall[newTypeText];
+    newPlayer.species = new Gauntlet.GuildHall[newTypeText];
   })
 
  $('.weapon__button').click(function (e) {

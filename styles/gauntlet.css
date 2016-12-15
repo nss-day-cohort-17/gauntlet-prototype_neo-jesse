@@ -151,27 +151,24 @@ margin-top: 2.5em;
 #healthBars {
   justify-content: space-around;
   vertical-align: center;
-  -webkit-appearance: none;
-   appearance: none;
+}
 
+.progressBar {
+    -webkit-appearance: none;
+   appearance: none;
   width: 250px;
   height: 20px;
   /*background-color: #eee;*/
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
-#health{
-  /*margin-top: 5em;*/
-}
 
 #enemyHealth{
 margin-top: 20em !important;
-background-color: orange !important;
 }
+#enemyHealthBar
+progress::-webkit-progress-value { background: red; }
 
-.btnStyleAttack {
-
-}
 
 .battle-screen {
   height: 700px;
