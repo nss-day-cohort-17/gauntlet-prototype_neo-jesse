@@ -5,6 +5,7 @@ var newPlayerName;
 
 var newPlayerClass;
 
+
       var orc = new Gauntlet.Combatants.Orc();
       orc.generateClass();
       orc.setWeapon(new Gauntlet.Armory.Broadsword());
@@ -85,11 +86,17 @@ $(document).ready(function() {
    document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
 
 
+
       console.log(newPlayer);
 
       newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
 
+    // var orc = new Gauntlet.Combatants.Orc();
+    //   orc.generateClass();
+    //   orc.setWeapon(new Gauntlet.Armory.Broadsword());
+    //   console.log(orc.toString());
+      // console.log(orc)
 
    }
 
@@ -97,7 +104,7 @@ $(document).ready(function() {
 
   });
 
- 
+
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
       $('#character-select').show('slow');
@@ -170,27 +177,46 @@ $(document).ready(function() {
 
 
 //Battle function for Human//
-//Each time the attack button is clicked, the player's chosen character and the 
+//Each time the attack button is clicked, the player's chosen character and the
 //generated enemy should attack with their weapon
 //
 var damageInflicted;
 var damageReceived;
 var attack;
-function inflictDamage() {
+
+  function inflictDamage() {
+//healthpoints is health plus healthbonus which can be negative
+  var healthPoints = newPlayer.health + newPlayer.species.healthBonus;
+
+    //damage to enemy is ((strength + strengthBonus) divided by weapon damage)
+    // times 2
+    var damageInflicted = ((newPlayer.species.strengthBonus +
+    newPlayer.strength) / (newPlayer.weapon.damage)) * 2;
+
+//damage received is same formula for given, will change based on chars of
+//enemy
+    // var damageReceived = orc.weapon / whatever
 
 
+    var attackSuccess = newPlayer.intelligence;
+    console.log(attackSuccess)
+
+
+ if (healthPoints === 0) {
+  $("#attackBtn").button("disable");
+  alert("Better luck next time, loser");
+ // } else if {
+
+  }
 }
-//damage received is a function of the weapon
-//odds of getting hit are a function of intelligence
-//starting health newPlayer.health
 
-
+$("#attackBtn").click(inflictDamage);
 
 //once the damage is calculated, subtract that from the opponents' health
 
 
 //evt listener for attack button--WORKS//
-$("#attackBtn").click(inflictDamage);
+
 
 $('.card--battleground').keypress(function (e) {
   if (this.keyCode === 32) {

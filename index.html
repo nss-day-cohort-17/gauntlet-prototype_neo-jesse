@@ -216,7 +216,7 @@
             <img id="weaponHands" src="http://2.bp.blogspot.com/-jVJAmJYJkgk/TdjbzEebU0I/AAAAAAAAAUo/GtS1MOQzyug/s400/matrix%2B1.jpg">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
-                <span class="btn__text" id="bareHands">BareHands</span>
+                <span class="btn__text" id="bareHands">Barehands</span>
               </a>
       </div>
 
@@ -232,7 +232,7 @@
             <img id="weaponImg" src="http://www.elvish.org/gwaith/movie/anduril.jpg">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
-                <span class="btn__text" id="broadSword">BroadSword</span>
+                <span class="btn__text" id="broadSword">Broadsword</span>
               </a>
             </div>
 
@@ -240,7 +240,7 @@
             <img id="weaponImg" src="https://www.iloveswords.com/images/LOTR/MDL_gimli.jpg">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
-                <span class="btn__text" id="warAxe">WarAxe</span>
+                <span class="btn__text" id="warAxe">Waraxe</span>
               </a>
             </div>
           </div>
@@ -263,19 +263,29 @@
 
           <div class="row">
               <span id="healthBars">
-                  <div class="col-md-1 col-md-offset-8">
-                  <div id="myInfo"></div>
-                    <progress class="progressBar" id="health" value="80" max="140">""</progress>
-                    
+                    <div class="col-md-6 col-md-offset-1">
+                    <div id="myInfo"></div>
+                    </div>
+
+                  <div class="col-md-2 col-md-offset-8">
+                       <progress class="progressBar" id="health" value="80" max="140">""</progress>
+
                   </div>
+
+
+          </div>
                 </span>
+                <div class="col-md-12 screen-filler"></div>
+          <div class="row" id="barHeight">
                 <span id="enemyHealthBar">
+
                   <div class="col-md-8 col-md-offset-1">
                   <div id="enemyInfo"></div>
                     <progress class="progressBar" id="enemyHealth" value="80" max="140">""</progress>
                 </div>
+
                 </span>
-          </div>
+            </div>
       </section>
 <!--          var health is document.get...
          health.value = health.value (add, whatever) -->
