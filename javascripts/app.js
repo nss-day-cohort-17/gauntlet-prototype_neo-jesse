@@ -146,6 +146,7 @@ function inflictDamage() {
 
 //evt listener for attack button--WORKS//
 $("#attackBtn").click(inflictDamage);
+
 // $(".card--battleground").keypress(function (e) {
 //   // if ( === 32) {
 //     alert("spaceAttack")

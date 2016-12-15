@@ -43,10 +43,10 @@
           </a>
         </div>
       </div>
-      
+
       <div class="container-fluid">
         <div class="row">
-          
+
           <div id="fighterClass" class="col-sm-12">
             <div class="fighterClass class__button">
             <img id="" src="">
@@ -262,24 +262,33 @@
 
       <section id="battleground" class="card card--battleground">
           <div class="battle-screen container">
-          <div class="row filler"></div>
+          <div class="row filler">
+
           <div class="row">
               <span id="healthBars">
-                  <div class="col-md-2 col-md-offset1">
-                    <progress class="progressBar" id="health" value="#" max="#">""</progress>
+                  <div class="col-md-1 col-md-offset-8">
+                    <progress class="progressBar" id="health" value="80" max="100">""</progress>
                   </div>
-                  <div class="col-md-2 col-md-offset1">
-                    <progress class="progressBar" id="enemyHealth" value="#" max="">""</progress>
+
+                  <div class="col-md-8 col-md-offset-1">
+                    <progress class="progressBar" id="enemyHealth" value="80" max="100">""</progress>
+
                 </div>
+          </div>
+      </section>
+              </span>
 <!--          var health is document.get...
          health.value = health.value (add, whatever) -->
-                <button class="btn btn-primary col-md-2 col-md-offset1" id="attackBtn" role="button" type="button">Attack!</button>
-                <button class="btn btn-danger col-md-2 col-md-offset1 card__back" href="#" previous="card--class" id="exitBtn" role="button" type="button">Run Away</button>
-              </span>
-            </div>
-         </div>
-        </div>
-      </section>
+
+        <section id="battleground" class="card card--battleground">
+                <span id="attkDfndBtn">
+                  <button class="btn btn-primary col-md-8 col-md-offset-2" id="attackBtn" role="button" type="button">Attack!</button>
+                  <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Run</button>
+                </span>
+              </div>
+           </div>
+          </div>
+        </section>
 
 
   </article>
