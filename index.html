@@ -49,10 +49,9 @@
 
           <div id="fighterClass" class="col-sm-12">
             <div class="fighterClass class__button">
-            <img id="" src="">
               <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Fighter Class</span>
+                <span class="btn__prompt"></span>
+                <span class="btn__text">Fighter</span>
               </a>
             </div>
           </div>
@@ -60,19 +59,17 @@
       </div>
     <div class="col-sm-4">
       <div id="magicalClass" class="magicalClass class__button">
-            <img id="" src="">
             <a class="class__link btn btn--big btn--blue" href="#">
-             <span class="btn__prompt">></span>
-             <span class="btn__text">Mage Class</span>
+             <span class="btn__prompt"></span>
+             <span class="btn__text">Mage</span>
             </a>
       </div>
     </div>
       <div class="col-sm-offset-8">
           <div class="stealthClass class__button">
-            <img id="" src="">
               <a class="class__link btn btn--big btn--blue stealthLink stealthClass" href="#">
-                <span class="btn__prompt stealthClass">></span>
-                <span class="btn__text stealthClass">Stealth Class</span>
+                <span class="btn__prompt stealthClass"></span>
+                <span class="btn__text stealthClass">Stealth</span>
               </a>
               </div>
             </div>
@@ -266,17 +263,28 @@
 
           <div class="row">
               <span id="healthBars">
-                  <div class="col-md-1 col-md-offset-8">
-                    <progress class="progressBar" id="health" value="80" max="100">""</progress>
+                    <div class="col-md-6 col-md-offset-1">
+                    <div id="myInfo"></div>
+                    </div>
+
+                  <div class="col-md-2 col-md-offset-8">
+                       <progress class="progressBar" id="health" value="80" max="100">""</progress>
                   </div>
-                </span>
-                <span id="enemyHealthBar">
-                  <div class="col-md-8 col-md-offset-1">
-                    <progress class="progressBar" id="enemyHealth" value="80" max="100">""</progress>
-    
-                </div>
-                </span>
+
+
           </div>
+                </span>
+                <div class="col-md-12 screen-filler"></div>
+          <div class="row" id="barHeight">
+                <span id="enemyHealthBar">
+                  <div class="col-md-2 col-md-offset-1">
+                    <progress class="progressBar" id="enemyHealth" value="80" max="100">""</progress>
+                  </div>
+                    <div class="col-md-6 col-md-offset-2">
+                    <div id="enemyInfo"></div>
+                    </div>
+                </span>
+            </div>
       </section>
 <!--          var health is document.get...
          health.value = health.value (add, whatever) -->

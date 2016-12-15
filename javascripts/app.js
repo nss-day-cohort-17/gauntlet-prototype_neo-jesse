@@ -65,6 +65,12 @@ $(document).ready(function() {
 
    // $('#health').progressbar('value', startingHealth);
 
+   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+
+
+      console.log(newPlayer);
+
    newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
 
       // var warrior = new Gauntlet.Combatants.Human();
@@ -72,18 +78,20 @@ $(document).ready(function() {
       // warrior.generateClass();  // This will be used for "Surprise me" option
       // console.log(warrior.toString());
 
+
     var orc = new Gauntlet.Combatants.Orc();
       orc.generateClass();
       orc.setWeapon(new Gauntlet.Armory.Broadsword());
       console.log(orc.toString());
       // console.log(orc)
+
    }
 
 
 
   });
 
- 
+
   $(".class__button").click(function(e) {
     if ($(this).hasClass('stealthClass') === true) {
       $('#character-select').show('slow');
@@ -107,6 +115,14 @@ $(document).ready(function() {
       $('.stealth').hide();
     }
   })
+
+  //   $('.class__button').click(function (e) {
+  //   var typeText = this.innerText.slice(1);
+  //   var newTypeText = typeText.toLowerCase();
+  //   newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+  //   console.log(newTypeText)
+  //   newPlayer.class = new Gauntlet.GuildHall[newTypeText];
+  // })
 
   $('.type').click(function (e) {
     var typeText = this.innerText.slice(1);
@@ -147,7 +163,7 @@ $(document).ready(function() {
 
 
 //Battle function for Human//
-//Each time the attack button is clicked, the player's chosen character and the 
+//Each time the attack button is clicked, the player's chosen character and the
 //generated enemy should attack with their weapon
 //
 var damageInflicted;
@@ -181,18 +197,14 @@ var attack;
 
 $("#attackBtn").click(inflictDamage);
 
-
-
 //once the damage is calculated, subtract that from the opponents' health
 
 
 //evt listener for attack button--WORKS//
 
 
-// $(".card--battleground").keypress(function (e) {
-//   // if ( === 32) {
-//     alert("spaceAttack")
-//   // }
-//   })
-
-//
+$('.card--battleground').keypress(function (e) {
+  if (this.keyCode === 32) {
+    alert("spaceAttack")
+  }
+  })
