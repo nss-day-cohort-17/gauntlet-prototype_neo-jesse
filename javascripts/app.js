@@ -82,8 +82,6 @@ $(document).ready(function() {
    document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
-
-
       console.log(newPlayer);
       console.log(orc)
 
@@ -226,13 +224,14 @@ $("#attackBtn").click(inflictDamage);
 
 //evt listener for attack button--WORKS//
 
-// orc attack once battle starts 
+// orc attack once battle starts
 
 function endGame () {
   if (newPlayer.health <= 0) {
     $('.card--battleground').html(`<span class='youLose versus'>${orc.class.name} WINS</span>
                                   <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } else if (orc.health <= 0) {
+
     $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
                                     <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } 
@@ -240,6 +239,7 @@ function endGame () {
   $('#exitBtn').click(function (e){
     location.reload()
 })
+
 }
 
 function battle () {
@@ -265,10 +265,12 @@ function orcAttack() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
    if (orc.health > 0) {setTimeout(function() {
             orcAttack();
+
             loop();  
     }, rand); } else {
       endGame()
    }
+
 }());
 
 
