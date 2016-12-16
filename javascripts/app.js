@@ -79,6 +79,7 @@ $(document).ready(function() {
 
       if ($('.weaponBg-matrix').hasClass('weaponBg')) {
         $('body').addClass('matrix-battleground');
+
       } else {
 
       $('body').addClass('battleground-body');
@@ -263,6 +264,14 @@ function battle () {
   // hide vs screen
 
 function orcAttack() {
+  if ($('body').hasClass('matrix-battleground')) {
+      $('.battle-screen').addClass('battle-screen-hit-matrix');
+  setTimeout(function () {
+    $('.battle-screen').removeClass('battle-screen-hit-matrix');
+      endGame();
+
+  }, 500);
+  } else {
 
   $('.battle-screen').addClass('battle-screen-hit');
   setTimeout(function () {
@@ -270,6 +279,7 @@ function orcAttack() {
       endGame();
 
   }, 500);
+  }
 
   newPlayer.health = newPlayer.health - orc.weapon.damage
 
