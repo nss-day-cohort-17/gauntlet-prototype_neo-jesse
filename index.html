@@ -15,12 +15,13 @@
   <article id="game-container">
 
     <section id="player-setup" class="card card--name">
+      <div class="matrixBg-matrix">
       <div class="card__prompt">
-        <div>RECORD YOUR NAME, ADVENTURER</div>
+        <div>RECORD YOUR NAME</div>
         <div class="field">
           <input type="text" autofocus="true" id="player-name" class="field__textinput">
         </div>
-      </div>
+        <button id="matrixTheme" class="btn--big bstn">MATRIX THEME</button>
 
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange"
@@ -30,9 +31,12 @@
           <span class="btn__text">Select class</span>
         </a>
       </div>
+      </div>
+      </div>
     </section>
       <!-- Choose class -->
     <section id="classSelect" class="card card--class">
+      <div class="classBg-matrix">
       <div class="card__prompt">
         <div>CHOOSE YOUR CLASS</div>
         <div>
@@ -74,9 +78,7 @@
               </a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+      <div id="selCharBtn">
         <div class="card__button">
           <a class="card__link btn btn--big btn--orange"
              href="#"
@@ -84,10 +86,14 @@
             <span class="btn__prompt">></span>
             <span class="btn__text">Select Character</span>
           </a>
+          </div>
         </div>
+      </div>
+    </div>
     </section>
 
     <section id="character-select" class="card card--character">
+    <div class="characterBg-matrix">
       <div class="card__prompt">
         <div>CHOOSE YOUR CHARACTER</div>
         <div>
@@ -194,9 +200,12 @@
           <span class="btn__text">Select weapon</span>
         </a>
       </div>
+      </div>
+    </div>
     </section>
 
     <section id="weapon-select" class="card card--weapon">
+    <div class="weaponBg-matrix">
       <div class="card__prompt">
         <div>choose your weapon</div>
         <div>
@@ -223,6 +232,7 @@
 
       <div class="weapon__button">
           <img id="weaponImg" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQn1oOkIva0k0MUBwl8Yqp6K8Ys8Ls-6ImAyC0EXcG0P2R9fZZU">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="dagger">Dagger</span>
@@ -231,6 +241,7 @@
 
             <div class="weapon__button">
             <img id="weaponImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEwNBfJbldiZSEaUapuqwwer7Y0QDe9YTtcuaIY9S1a68N7KX4">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="broadSword">Broadsword</span>
@@ -238,7 +249,9 @@
             </div>
 
             <div class="weapon__button">
+
             <img id="weaponImg" src="http://creativenerds.co.uk/wp-content/uploads/2012/04/medivialaxe.jpg">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="warAxe">Waraxe</span>
@@ -256,6 +269,7 @@
           <span class="btn__text span-defeat">defeat your enemies</span>
         </a>
       </div>
+    </div>
     </section>
 
       <section id="battleground" class="card card--battleground">
