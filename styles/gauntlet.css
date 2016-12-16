@@ -172,8 +172,9 @@ margin-top: 5em !important;
 }*/
 
 .screen-filler {
-  height: 575px;
+  height: 550px;
 }
+
 #enemyHealthBar
 progress::-webkit-progress-value { background: red; }
 {margin-bottom: 2em;}
@@ -187,8 +188,12 @@ progress::-webkit-progress-value { background: red; }
   border:1px solid black;
 }
 
+.battle-screen-hit {
+  background-color: rgba(255,0,0, .3);
+}
+
 .filler {
-  height: 700px;
+  height: 600px;
 }
 /*Class Select*/
 #classSelect {
@@ -205,3 +210,21 @@ progress::-webkit-progress-value { background: red; }
   font-size: .8em;
   text-align: right;
 }
+
+.youWin {
+  font-size: 60px;
+  color: forestgreen;
+}
+
+.youLose {
+  font-size: 60px;
+  color: maroon;
+}
+
+.versus {
+  font-size: 60px;
+}
+
+.versus-screen {
+  color: white;
+ }

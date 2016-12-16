@@ -43,8 +43,6 @@ $(document).ready(function() {
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
-        // newPlayer = new Gauntlet.GuildHall.Sorcerer();
-        // console.log(newPlayer)
         break;
       case "card--class":
         moveAlong = ($("player-name").val() !== "");
@@ -89,8 +87,18 @@ $(document).ready(function() {
 
       console.log(newPlayer);
 
+
       // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
+
+          $('.battle-screen').hide();
+          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.species}`)
+
+      setTimeout(function() {
+          $('.versus-screen').hide();
+          $('.battle-screen').show();
+          battle();
+      }, 7000)
 
     // var orc = new Gauntlet.Combatants.Orc();
     //   orc.generateClass();
@@ -198,10 +206,15 @@ var attack;
 //enemy
     // var damageReceived = orc.weapon / whatever
 
+    orc.health = orc.health - newPlayer.weapon.damage
+
+    $('#enemyHealth').val(orc.health)
+    $('#attackBtn').prop('disabled', true);
+    setTimeout(function() {
+      $('#attackBtn').prop('disabled', false);
+    }, 1500)
 
     var attackSuccess = newPlayer.intelligence;
-    console.log(attackSuccess)
-
 
  if (healthPoints === 0) {
   $("#attackBtn").button("disable");
@@ -217,6 +230,47 @@ $("#attackBtn").click(inflictDamage);
 
 
 //evt listener for attack button--WORKS//
+
+// orc attack once battle starts 
+
+function endGame () {
+  if (newPlayer.health <= 0) {
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>`)
+  } else if (orc.health <= 0) {
+    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>`)
+  } 
+}
+
+function battle () {
+
+  // hide vs screen
+
+function orcAttack() {
+
+  $('.battle-screen').addClass('battle-screen-hit');
+  setTimeout(function () {
+    $('.battle-screen').removeClass('battle-screen-hit');
+      endGame();
+
+  }, 500);
+
+  newPlayer.health = newPlayer.health - orc.weapon.damage
+
+  $('#health').val(newPlayer.health)
+
+}
+
+(function loop() {
+    var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
+    setTimeout(function() {
+            orcAttack();
+            loop();  
+    }, rand);
+}());
+
+}
+
+
 
 
 // $('.card--battleground').keypress(function (e) {
