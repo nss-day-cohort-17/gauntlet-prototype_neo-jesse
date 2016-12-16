@@ -85,8 +85,6 @@ $(document).ready(function() {
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
 
-
-
       console.log(newPlayer);
 
 
@@ -94,7 +92,7 @@ $(document).ready(function() {
       console.log(orc)
 
           $('.battle-screen').hide();
-          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.species}`)
+          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.class.name}`)
 
       setTimeout(function() {
           $('.versus-screen').hide();
@@ -233,23 +231,22 @@ $("#attackBtn").click(inflictDamage);
 
 //evt listener for attack button--WORKS//
 
-// orc attack once battle starts 
+// orc attack once battle starts
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.class.name} WINS</span>
                                   <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } else if (orc.health <= 0) {
+
     $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
                                     <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } 
 
   $('#exitBtn').click(function (e){
-  console.log('hey')
-  $('.card--battleground').hide();
-  $('.card--name').show();
-  $('body').removeClass('battleground-body');
+    location.reload()
 })
+
 }
 
 function battle () {
@@ -275,8 +272,10 @@ function orcAttack() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
    if (orc.health > 0) {setTimeout(function() {
             orcAttack();
+
             loop();  
     }, rand); } else {
       endGame()
    }
+
 }());

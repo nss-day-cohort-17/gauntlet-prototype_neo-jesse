@@ -2,7 +2,9 @@ body {
   font-family: "Lato", "Helvetica", "sans-serif";
   margin: 0;
   padding: 10px;
-  font-size: 3em;
+  font-size: 2.5em;
+  font-family: 'Press Start 2P', cursive;
+  background-color: black;
 }
 
 .field {
@@ -30,6 +32,7 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  color: red;
 }
 
 .card__button {
@@ -177,7 +180,7 @@ margin-top: 5em !important;
 
 #enemyHealthBar
 progress::-webkit-progress-value { background: red; }
-{margin-bottom: 2em;}
+{margin-bottom: 3em;}
 
 #barHeight {
   height: 100px;
@@ -186,10 +189,18 @@ progress::-webkit-progress-value { background: red; }
 .battle-screen {
   height: 700px;
   border:1px solid black;
+  background-image:url('/orc1@1,5x.png');
+  background-repeat: no-repeat;
+  background-size: 300px 200px;
+  background-position: center;
 }
 
 .battle-screen-hit {
   background-color: rgba(255,0,0, .3);
+  background-image: url('http://www.tomspinadesigns.com/wp-content/uploads/2016/01/lotr-uruk-hai-orc-movie-mask-5_1.jpg');
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  background-position: center;
 }
 
 .filler {
@@ -223,8 +234,10 @@ progress::-webkit-progress-value { background: red; }
 
 .versus {
   font-size: 60px;
+  text-align: center !important;
 }
 
 .versus-screen {
   color: white;
+  text-align: center !important;
  }
