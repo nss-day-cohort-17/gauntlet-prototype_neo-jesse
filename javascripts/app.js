@@ -31,6 +31,14 @@ $(document).ready(function() {
     move on to the next view.
    */
 
+   $('#matrixTheme').click(function (e) {
+    $('.matrixBg-matrix').toggleClass('matrixBg');
+    $('.characterBg-matrix').toggleClass('characterBg');
+    $('.weaponBg-matrix').toggleClass('weaponBg');
+    $('.classBg-matrix').toggleClass('classBg');
+    // $('.card--battleground').addClass('matrix-battleground');
+   })
+
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
@@ -43,8 +51,6 @@ $(document).ready(function() {
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
-        // newPlayer = new Gauntlet.GuildHall.Sorcerer();
-        // console.log(newPlayer)
         break;
       case "card--class":
         moveAlong = ($("player-name").val() !== "");
@@ -53,8 +59,7 @@ $(document).ready(function() {
         break
       case 'card--battleground':
         moveAlong = ($("#player-name").val() !== "");
-        // newPlayer.weapon = WarAxe;
-        console.log(newPlayer)
+
         break;
 
     }
@@ -72,7 +77,13 @@ $(document).ready(function() {
 
       $('.card--weapon').hide();
 
+      if ($('.weaponBg-matrix').hasClass('weaponBg')) {
+        $('body').addClass('matrix-battleground');
+      } else {
+
       $('body').addClass('battleground-body');
+
+      }
 
     var startingHealth = newPlayer.health + newPlayer.species.healthBonus
 
@@ -82,15 +93,22 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
-   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
-   document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
 
+   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
 
       console.log(newPlayer);
-
-      newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
+
+          $('.battle-screen').hide();
+          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.class.name}`)
+
+      setTimeout(function() {
+          $('.versus-screen').hide();
+          $('.battle-screen').show();
+          battle();
+      }, 7000)
 
     // var orc = new Gauntlet.Combatants.Orc();
     //   orc.generateClass();
@@ -197,10 +215,15 @@ var attack;
 //enemy
     // var damageReceived = orc.weapon / whatever
 
+    orc.health = orc.health - newPlayer.weapon.damage
+
+    $('#enemyHealth').val(orc.health)
+    $('#attackBtn').prop('disabled', true);
+    setTimeout(function() {
+      $('#attackBtn').prop('disabled', false);
+    }, 1200)
 
     var attackSuccess = newPlayer.intelligence;
-    console.log(attackSuccess)
-
 
  if (healthPoints === 0) {
   $("#attackBtn").button("disable");
@@ -217,9 +240,55 @@ $("#attackBtn").click(inflictDamage);
 
 //evt listener for attack button--WORKS//
 
+// orc attack once battle starts
 
-$('.card--battleground').keypress(function (e) {
-  if (this.keyCode === 32) {
-    alert("spaceAttack")
-  }
-  })
+function endGame () {
+  if (newPlayer.health <= 0) {
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.class.name} WINS</span>
+                                  <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
+  } else if (orc.health <= 0) {
+
+    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
+                                    <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
+  } 
+
+  $('#exitBtn').click(function (e){
+    location.reload()
+})
+
+}
+
+function battle () {
+
+  // hide vs screen
+
+function orcAttack() {
+
+  $('.battle-screen').addClass('battle-screen-hit');
+  setTimeout(function () {
+    $('.battle-screen').removeClass('battle-screen-hit');
+      endGame();
+
+  }, 500);
+
+  newPlayer.health = newPlayer.health - orc.weapon.damage
+
+  $('#health').val(newPlayer.health)
+
+}
+
+(function loop() {
+    var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
+   if (orc.health > 0) {setTimeout(function() {
+            orcAttack();
+
+            loop();  
+    }, rand); } else {
+      endGame()
+   }
+
+}());
+
+
+
+}

@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
@@ -14,12 +15,13 @@
   <article id="game-container">
 
     <section id="player-setup" class="card card--name">
-      <div id="matrixBg">
+      <div class="matrixBg-matrix">
       <div class="card__prompt">
         <div>RECORD YOUR NAME</div>
         <div class="field">
           <input type="text" autofocus="true" id="player-name" class="field__textinput">
         </div>
+        <button id="matrixTheme" class="btn--big bstn">MATRIX THEME</button>
 
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange"
@@ -34,7 +36,7 @@
     </section>
       <!-- Choose class -->
     <section id="classSelect" class="card card--class">
-      <div id="classBg">
+      <div class="classBg-matrix">
       <div class="card__prompt">
         <div>CHOOSE YOUR CLASS</div>
         <div>
@@ -91,7 +93,7 @@
     </section>
 
     <section id="character-select" class="card card--character">
-    <div id="characterBg">
+    <div class="characterBg-matrix">
       <div class="card__prompt">
         <div>CHOOSE YOUR CHARACTER</div>
         <div>
@@ -203,7 +205,7 @@
     </section>
 
     <section id="weapon-select" class="card card--weapon">
-    <div id="weaponBg">
+    <div class="weaponBg-matrix">
       <div class="card__prompt">
         <div>choose your weapon</div>
         <div>
@@ -229,7 +231,8 @@
       </div>
 
       <div class="weapon__button">
-          <img id="weaponImg" src="http://www.medievalcollectibles.com/images/PRODUCT/large/UC1372_2_.png">
+          <img id="weaponImg" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQn1oOkIva0k0MUBwl8Yqp6K8Ys8Ls-6ImAyC0EXcG0P2R9fZZU">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="dagger">Dagger</span>
@@ -237,7 +240,8 @@
             </div>
 
             <div class="weapon__button">
-            <img id="weaponImg" src="http://blogmedieval.com/wp-content/uploads/2012/10/UC1380.png">
+            <img id="weaponImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEwNBfJbldiZSEaUapuqwwer7Y0QDe9YTtcuaIY9S1a68N7KX4">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="broadSword">Broadsword</span>
@@ -245,7 +249,9 @@
             </div>
 
             <div class="weapon__button">
-            <img id="weaponImg" src="http://blogmedieval.com/wp-content/uploads/2012/10/BK-UC2628.png">
+
+            <img id="weaponImg" src="http://creativenerds.co.uk/wp-content/uploads/2012/04/medivialaxe.jpg">
+
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
                 <span class="btn__text" id="warAxe">Waraxe</span>
@@ -267,6 +273,7 @@
     </section>
 
       <section id="battleground" class="card card--battleground">
+          <div class="versus-screen versus"></div>
           <div class="battle-screen container">
           <div class="row filler">
 
@@ -281,7 +288,6 @@
 
                   </div>
 
-
           </div>
                 </span>
                 <div class="col-md-12 screen-filler"></div>
@@ -295,14 +301,9 @@
 
                 </span>
             </div>
-      </section>
-<!--          var health is document.get...
-         health.value = health.value (add, whatever) -->
-
-        <section id="battleground" class="card card--battleground">
+            </div>
                 <span id="attkDfndBtn">
                   <button class="btn btn-primary col-md-8 col-md-offset-2" id="attackBtn" role="button" type="button">Attack!</button>
-                  <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Run</button>
                 </span>
               </div>
            </div>

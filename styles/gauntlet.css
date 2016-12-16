@@ -2,7 +2,9 @@ body {
   font-family: "Lato", "Helvetica", "sans-serif";
   margin: 0;
   padding: 10px;
-  font-size: 3em;
+  font-size: 2.5em;
+  font-family: 'Press Start 2P', cursive;
+  background-color: black;
 }
 
 .field {
@@ -31,6 +33,7 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  color: red;
 }
 
 .card__button {
@@ -49,13 +52,20 @@ body {
 /*backgrounds*/
 .battleground-body {
 
-  background: url("https://trojantopher.files.wordpress.com/2011/09/new-cap-city.jpg")  no-repeat center center fixed;
+  background: url('/Battlefield.jpg')  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-#matrixBg{
+.matrix-battleground {
+  background:url("https://trojantopher.files.wordpress.com/2011/09/new-cap-city.jpg");
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.matrixBg{
   background: url(https://i.makeagif.com/media/10-24-2015/jOiyeV.gif) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -64,7 +74,7 @@ body {
   color: white;
   height: 100vh;
 }
-#classBg {
+.classBg {
   background: url(http://hitwallpaper.com/wp-content/uploads/2013/07/5194d4b4ec9d512305.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -73,7 +83,7 @@ body {
   color: white;
   height: 100vh;
 }
-#characterBg {
+.characterBg {
   background: url(http://vignette3.wikia.nocookie.net/narutofanon/images/e/eb/Neo_Flight.gif/revision/latest?cb=20141104225833) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -82,8 +92,8 @@ body {
   color: white;
   height: 23em;
 }
-#weaponBg {
- background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSM--ywMYRtBwsA-BX35hdYPFSmzOU3asABPtpPafJs1Cvw6ufRfA)no-repeat center center;
+.weaponBg {
+ background: url(https://i.makeagif.com/media/10-24-2015/jOiyeV.gif)no-repeat center center;
  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -217,9 +227,10 @@ margin-top: 5em !important;
 .screen-filler {
   height: 550px;
 }
+
 #enemyHealthBar
 progress::-webkit-progress-value { background: red; }
-{margin-bottom: 2em;}
+{margin-bottom: 3em;}
 
 #barHeight {
   height: 100px;
@@ -228,10 +239,22 @@ progress::-webkit-progress-value { background: red; }
 .battle-screen {
   height: 700px;
   border:1px solid black;
+  background-image:url('/orc1@1,5x.png');
+  background-repeat: no-repeat;
+  background-size: 300px 200px;
+  background-position: center;
+}
+
+.battle-screen-hit {
+  background-color: rgba(255,0,0, .3);
+  background-image: url('http://www.tomspinadesigns.com/wp-content/uploads/2016/01/lotr-uruk-hai-orc-movie-mask-5_1.jpg');
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  background-position: center;
 }
 
 .filler {
-  height: 700px;
+  height: 600px;
 }
 /*Class Select*/
 #classSelect {
@@ -248,3 +271,23 @@ progress::-webkit-progress-value { background: red; }
   font-size: .8em;
   text-align: right;
 }
+
+.youWin {
+  font-size: 60px;
+  color: forestgreen;
+}
+
+.youLose {
+  font-size: 60px;
+  color: maroon;
+}
+
+.versus {
+  font-size: 60px;
+  text-align: center !important;
+}
+
+.versus-screen {
+  color: white;
+  text-align: center !important;
+ }
