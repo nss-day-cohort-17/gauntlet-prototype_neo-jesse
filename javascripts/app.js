@@ -31,6 +31,14 @@ $(document).ready(function() {
     move on to the next view.
    */
 
+   $('#matrixTheme').click(function (e) {
+    $('.matrixBg-matrix').toggleClass('matrixBg');
+    $('.characterBg-matrix').toggleClass('characterBg');
+    $('.weaponBg-matrix').toggleClass('weaponBg');
+    $('.classBg-matrix').toggleClass('classBg');
+    // $('.card--battleground').addClass('matrix-battleground');
+   })
+
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
@@ -69,7 +77,13 @@ $(document).ready(function() {
 
       $('.card--weapon').hide();
 
+      if ($('.weaponBg-matrix').hasClass('weaponBg')) {
+        $('body').addClass('matrix-battleground');
+      } else {
+
       $('body').addClass('battleground-body');
+
+      }
 
     var startingHealth = newPlayer.health + newPlayer.species.healthBonus
 
@@ -79,8 +93,10 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
+
    document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
+
 
       console.log(newPlayer);
       console.log(orc)
