@@ -95,7 +95,7 @@ $(document).ready(function() {
    $('#enemyHealth').val(enemyHealth);
 
 
-   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
 
@@ -148,13 +148,6 @@ $(document).ready(function() {
     }
   })
 
-  //   $('.class__button').click(function (e) {
-  //   var typeText = this.innerText.slice(1);
-  //   var newTypeText = typeText.toLowerCase();
-  //   newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
-  //   console.log(newTypeText)
-  //   newPlayer.class = new Gauntlet.GuildHall[newTypeText];
-  // })
 
   $('.type').click(function (e) {
     var typeText = this.innerText.slice(1);
@@ -168,6 +161,7 @@ $(document).ready(function() {
     var newTypeText = typeText.toLowerCase();
     newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
     newPlayer.weapon = new Gauntlet.Armory[newTypeText];
+
   })
 
 
@@ -245,12 +239,12 @@ $("#attackBtn").click(inflictDamage);
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.card--battleground').html(`<span class='youLose versus'>${orc.class.name} WINS</span>
-                                  <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
+    $('.card--battleground').html(`<button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>
+                                  <div class='youLose versus fight'>${orc.class.name} WINS<br>YOU LOSE</div>`)
   } else if (orc.health <= 0) {
 
-    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
-                                    <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
+    $('.card--battleground').html(`<button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>
+                                  <div class='youWin versus fight'>${newPlayer.playerName} WINS!</div>`)
   } 
 
   $('#exitBtn').click(function (e){

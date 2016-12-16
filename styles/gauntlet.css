@@ -234,7 +234,7 @@ margin-top: 5em !important;
 }*/
 
 .screen-filler {
-  height: 550px;
+  height: 350px;
 }
 
 #enemyHealthBar
@@ -279,32 +279,42 @@ progress::-webkit-progress-value { background: red; }
 }
 /*Character Info*/
 #myInfo {
-  color: white;
+  color: maroon;
   font-size: .8em;
   text-align: left;
 }
 #enemyInfo {
-  color: white;
+  color: lightblue;
   font-size: .8em;
   text-align: right;
 }
 
 .youWin {
   font-size: 60px;
-  color: forestgreen;
+  color: tomato;
+  text-align: center;
+  margin-top:50px;
 }
 
 .youLose {
   font-size: 60px;
   color: maroon;
+  text-align: center;
+  margin-top:50px;
 }
 
 .versus {
-  font-size: 60px;
-  text-align: center !important;
+  font-size: 50px;
+  /*text-align: center !important;*/
 }
 
 .versus-screen {
-  color: orange;
+color: darkgoldenrod;
   text-align: center !important;
+ }
+
+ .fight {
+  text-align: center;
+  color: firebrick;
+  font-size: 70px;
  }
