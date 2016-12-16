@@ -230,9 +230,9 @@ $("#attackBtn").click(inflictDamage);
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.card--battleground').html(`<span class='youWin'>${orc.species} WINS</span>`)
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>`)
   } else if (orc.health <= 0) {
-    $('.card--battleground').html(`<span class='youLose'>${newPlayer.playerName} WINS</span>`)
+    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>`)
   } 
 }
 

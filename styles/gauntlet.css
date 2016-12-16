@@ -210,3 +210,21 @@ progress::-webkit-progress-value { background: red; }
   font-size: .8em;
   text-align: right;
 }
+
+.youWin {
+  font-size: 60px;
+  color: forestgreen;
+}
+
+.youLose {
+  font-size: 60px;
+  color: maroon;
+}
+
+.versus {
+  font-size: 60px;
+}
+
+.versus-screen {
+  color: white;
+ }
