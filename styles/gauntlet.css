@@ -14,6 +14,7 @@ body {
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
+  color: black !important;
 }
 
 
@@ -36,18 +37,60 @@ body {
   font-size: 1.1em;
   margin: 30px 0 0 0;
   text-align: center;
-
 }
-
+#selCharBtn {
+  vertical-align: bottom !important;
+  position:absolute !important;
+    bottom: 5px !important;
+    left: 0% !important;
+    right: 0% !important;
+    text-align: center !important;
+}
+/*backgrounds*/
 .battleground-body {
 
-  background: url("/Battlefield.jpg")  no-repeat center center fixed;
+  background: url("https://trojantopher.files.wordpress.com/2011/09/new-cap-city.jpg")  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
+#matrixBg{
+  background: url(https://i.makeagif.com/media/10-24-2015/jOiyeV.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+}
+#classBg {
+  background: url(http://hitwallpaper.com/wp-content/uploads/2013/07/5194d4b4ec9d512305.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+}
+#characterBg {
+  background: url(http://vignette3.wikia.nocookie.net/narutofanon/images/e/eb/Neo_Flight.gif/revision/latest?cb=20141104225833) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 23em;
+}
+#weaponBg {
+ background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSM--ywMYRtBwsA-BX35hdYPFSmzOU3asABPtpPafJs1Cvw6ufRfA)no-repeat center center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+}
 /*
   Button styles
  */
@@ -131,7 +174,7 @@ margin-top: 2.5em;
 }
 /*weapon styling*/
 #weaponImg {
-  height: 3em;
+  height: 6em;
   width: 6em;
   /*margin-right: 5em;*/
 }
@@ -172,7 +215,7 @@ margin-top: 5em !important;
 }*/
 
 .screen-filler {
-  height: 575px;
+  height: 550px;
 }
 #enemyHealthBar
 progress::-webkit-progress-value { background: red; }

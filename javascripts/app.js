@@ -82,7 +82,7 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
-   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
 
 
