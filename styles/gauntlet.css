@@ -49,6 +49,15 @@ body {
     right: 0% !important;
     text-align: center !important;
 }
+#matrixTheme {
+  vertical-align: bottom !important;
+  position:absolute !important;
+    bottom: 5px !important;
+    left: 0% !important;
+    right: 0% !important;
+    text-align: center !important;
+    background: url(https://i.makeagif.com/media/10-24-2015/jOiyeV.gif);
+}
 /*backgrounds*/
 .battleground-body {
 
@@ -288,6 +297,6 @@ progress::-webkit-progress-value { background: red; }
 }
 
 .versus-screen {
-  color: white;
+  color: orange;
   text-align: center !important;
  }
