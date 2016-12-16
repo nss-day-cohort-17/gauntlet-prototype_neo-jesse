@@ -186,10 +186,18 @@ progress::-webkit-progress-value { background: red; }
 .battle-screen {
   height: 700px;
   border:1px solid black;
+  background-image:url('/orc1@1,5x.png');
+  background-repeat: no-repeat;
+  background-size: 300px 200px;
+  background-position: center;
 }
 
 .battle-screen-hit {
   background-color: rgba(255,0,0, .3);
+  background-image: url('http://www.tomspinadesigns.com/wp-content/uploads/2016/01/lotr-uruk-hai-orc-movie-mask-5_1.jpg');
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  background-position: center;
 }
 
 .filler {

@@ -88,7 +88,7 @@ $(document).ready(function() {
       console.log(orc)
 
           $('.battle-screen').hide();
-          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.species}`)
+          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.class.name}`)
 
       setTimeout(function() {
           $('.versus-screen').hide();
@@ -230,7 +230,7 @@ $("#attackBtn").click(inflictDamage);
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.class.name} WINS</span>
                                   <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } else if (orc.health <= 0) {
     $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
@@ -238,10 +238,7 @@ function endGame () {
   } 
 
   $('#exitBtn').click(function (e){
-  console.log('hey')
-  $('.card--battleground').hide();
-  $('.card--name').show();
-  $('body').removeClass('battleground-body');
+    location.reload()
 })
 }
 
