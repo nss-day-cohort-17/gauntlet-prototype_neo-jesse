@@ -54,7 +54,7 @@ $(document).ready(function() {
       case 'card--battleground':
         moveAlong = ($("#player-name").val() !== "");
         // newPlayer.weapon = WarAxe;
-        console.log(newPlayer)
+        // console.log(newPlayer)
         break;
 
     }
@@ -82,14 +82,14 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
-   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
+   document.getElementById('myInfo').innerHTML = `Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
 
 
 
       console.log(newPlayer);
 
-      newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
+      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
 
     // var orc = new Gauntlet.Combatants.Orc();
@@ -141,6 +141,7 @@ $(document).ready(function() {
     var typeText = this.innerText.slice(1);
     var newTypeText = typeText.toLowerCase();
     newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+    console.log(newPlayer)
     newPlayer.species = new Gauntlet.GuildHall[newTypeText];
   })
 
@@ -218,8 +219,8 @@ $("#attackBtn").click(inflictDamage);
 //evt listener for attack button--WORKS//
 
 
-$('.card--battleground').keypress(function (e) {
-  if (this.keyCode === 32) {
-    alert("spaceAttack")
-  }
-  })
+// $('.card--battleground').keypress(function (e) {
+//   if (this.keyCode === 32) {
+//     alert("spaceAttack")
+//   }
+  // })
