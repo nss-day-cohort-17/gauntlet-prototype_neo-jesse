@@ -193,7 +193,7 @@ progress::-webkit-progress-value { background: red; }
 }
 
 .filler {
-  height: 700px;
+  height: 600px;
 }
 /*Class Select*/
 #classSelect {
