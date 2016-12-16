@@ -89,7 +89,10 @@ $(document).ready(function() {
       newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
 
-      battle()
+      setTimeout(function() {
+          // show vs screen
+          battle();
+      }, 8000)
 
     // var orc = new Gauntlet.Combatants.Orc();
     //   orc.generateClass();
@@ -227,6 +230,8 @@ function endGame () {
 }
 
 function battle () {
+
+  // hide vs screen
 
 function orcAttack() {
 
