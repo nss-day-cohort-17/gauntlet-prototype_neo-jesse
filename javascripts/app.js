@@ -80,7 +80,7 @@ $(document).ready(function() {
    $('#enemyHealth').val(enemyHealth);
 
    document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
-   document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
+   document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
 
 
@@ -207,7 +207,7 @@ var attack;
     $('#attackBtn').prop('disabled', true);
     setTimeout(function() {
       $('#attackBtn').prop('disabled', false);
-    }, 1500)
+    }, 1200)
 
     var attackSuccess = newPlayer.intelligence;
 
@@ -230,10 +230,19 @@ $("#attackBtn").click(inflictDamage);
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>`)
+    $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>
+                                  <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } else if (orc.health <= 0) {
-    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>`)
+    $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>
+                                    <button class="btn btn-danger col-md-offset-8" id="exitBtn" role="button" type="button">Play Again</button>`)
   } 
+
+  $('#exitBtn').click(function (e){
+  console.log('hey')
+  $('.card--battleground').hide();
+  $('.card--name').show();
+  $('body').removeClass('battleground-body');
+})
 }
 
 function battle () {
@@ -257,19 +266,14 @@ function orcAttack() {
 
 (function loop() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
-    setTimeout(function() {
+   if (orc.health > 0) {setTimeout(function() {
             orcAttack();
             loop();  
-    }, rand);
+    }, rand); } else {
+      endGame()
+   }
 }());
 
+
+
 }
-
-
-
-
-$('.card--battleground').keypress(function (e) {
-  if (this.keyCode === 32) {
-    alert("spaceAttack")
-  }
-  })
