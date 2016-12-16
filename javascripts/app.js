@@ -85,14 +85,16 @@ $(document).ready(function() {
 
 
       console.log(newPlayer);
-
-      newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
 
+          $('.battle-screen').hide();
+          $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.species}`)
+
       setTimeout(function() {
-          // show vs screen
+          $('.versus-screen').hide();
+          $('.battle-screen').show();
           battle();
-      }, 8000)
+      }, 7000)
 
     // var orc = new Gauntlet.Combatants.Orc();
     //   orc.generateClass();
@@ -199,10 +201,15 @@ var attack;
 //enemy
     // var damageReceived = orc.weapon / whatever
 
+    orc.health = orc.health - newPlayer.weapon.damage
+
+    $('#enemyHealth').val(orc.health)
+    $('#attackBtn').prop('disabled', true);
+    setTimeout(function() {
+      $('#attackBtn').prop('disabled', false);
+    }, 1500)
 
     var attackSuccess = newPlayer.intelligence;
-    console.log(attackSuccess)
-
 
  if (healthPoints === 0) {
   $("#attackBtn").button("disable");
@@ -223,10 +230,10 @@ $("#attackBtn").click(inflictDamage);
 
 function endGame () {
   if (newPlayer.health <= 0) {
-    $('.battle-screen').html(`<span class='youWin'>${orc.name} WINS</span>`)
+    $('.card--battleground').html(`<span class='youWin'>${orc.species} WINS</span>`)
   } else if (orc.health <= 0) {
-    $('.battle-screen').html(`<span class='youLose'>${newPlayer.playerName} WINS</span>`)
-  }
+    $('.card--battleground').html(`<span class='youLose'>${newPlayer.playerName} WINS</span>`)
+  } 
 }
 
 function battle () {
@@ -238,6 +245,8 @@ function orcAttack() {
   $('.battle-screen').addClass('battle-screen-hit');
   setTimeout(function () {
     $('.battle-screen').removeClass('battle-screen-hit');
+      endGame();
+
   }, 500);
 
   newPlayer.health = newPlayer.health - orc.weapon.damage
