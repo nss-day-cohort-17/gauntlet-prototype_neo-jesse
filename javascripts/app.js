@@ -11,12 +11,6 @@ var newPlayerClass;
       orc.setWeapon(new Gauntlet.Armory.Broadsword());
 
 
-      // var warrior = new Gauntlet.Combatants.Human();
-      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
-      // warrior.generateClass();  // This will be used for "Surprise me" option
-      // console.log(warrior.toString());
-
-
 
 // console.log(Gauntlet.)
 
@@ -99,8 +93,8 @@ $(document).ready(function() {
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
 
-      console.log(newPlayer);
-      console.log(orc)
+      // console.log(newPlayer);
+      // console.log(orc)
 
           $('.battle-screen').hide();
           $('.versus-screen').html(`${newPlayer.playerName} VS ${orc.class.name}`)
@@ -111,11 +105,6 @@ $(document).ready(function() {
           battle();
       }, 7000)
 
-    // var orc = new Gauntlet.Combatants.Orc();
-    //   orc.generateClass();
-    //   orc.setWeapon(new Gauntlet.Armory.Broadsword());
-    //   console.log(orc.toString());
-      // console.log(orc)
 
    }
 
@@ -160,8 +149,11 @@ $(document).ready(function() {
     var typeText = this.innerText.slice(2);
     var newTypeText = typeText.toLowerCase();
     newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+    if (newTypeText === 'Barehands') {
+      newPlayer.weapon = new Gauntlet.Armory.Weapon;
+    } else {
     newPlayer.weapon = new Gauntlet.Armory[newTypeText];
-
+    }
   })
 
 
@@ -178,21 +170,6 @@ $(document).ready(function() {
 
 });
 
-/*
-  Test code to generate a human player and an orc player
- */
-
-
-/*
-  Test code to generate a spell
- */
-
-
-
-//Battle function for Human//
-//Each time the attack button is clicked, the player's chosen character and the
-//generated enemy should attack with their weapon
-//
 var damageInflicted;
 var damageReceived;
 var attack;
@@ -230,10 +207,6 @@ var attack;
 
 $("#attackBtn").click(inflictDamage);
 
-//once the damage is calculated, subtract that from the opponents' health
-
-
-//evt listener for attack button--WORKS//
 
 // orc attack once battle starts
 
@@ -285,7 +258,6 @@ function orcAttack() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
    if (orc.health > 0) {setTimeout(function() {
             orcAttack();
-
             loop();  
     }, rand); } else {
       endGame()
