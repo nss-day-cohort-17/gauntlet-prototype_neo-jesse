@@ -51,7 +51,8 @@ $(document).ready(function() {
         break
       case 'card--battleground':
         moveAlong = ($("#player-name").val() !== "");
-
+        // newPlayer.weapon = WarAxe;
+        // console.log(newPlayer)
         break;
 
     }
@@ -79,10 +80,15 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
+
    document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
    document.getElementById('enemyInfo').innerHTML = `Enemy Type: ${orc.class.name} Weapon: ${orc.weapon.name}`
 
+
       console.log(newPlayer);
+
+
+      // newPlayer.setWeapon(new Gauntlet.Armory.Waraxe());
       console.log(orc)
 
           $('.battle-screen').hide();
@@ -143,6 +149,7 @@ $(document).ready(function() {
     var typeText = this.innerText.slice(1);
     var newTypeText = typeText.toLowerCase();
     newTypeText = newTypeText.charAt(0).toUpperCase() + newTypeText.slice(1);
+    console.log(newPlayer)
     newPlayer.species = new Gauntlet.GuildHall[newTypeText];
   })
 
@@ -272,7 +279,3 @@ function orcAttack() {
    }
 
 }());
-
-
-
-}
