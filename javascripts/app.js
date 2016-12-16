@@ -79,8 +79,8 @@ $(document).ready(function() {
 
    $('#enemyHealth').val(enemyHealth);
 
-   document.getElementById('myInfo').innerHTML = `(User)Name: ${newPlayer.playerName} Type: ${newPlayer.species.name} Weapon: ${newPlayer.weapon.name}`
-   document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${orc.species} Weapon: ${orc.weapon.name}`
+   document.getElementById('myInfo').innerHTML = `Name: ${ newPlayer.playerName } Type: ${ newPlayer.species.name } Weapon: ${ newPlayer.weapon.name }`
+   document.getElementById('enemyInfo').innerHTML = `Enemy: Type: ${ orc.species } Weapon: ${ orc.weapon.name }`
 
 
 
@@ -226,14 +226,14 @@ $("#attackBtn").click(inflictDamage);
 
 //evt listener for attack button--WORKS//
 
-// orc attack once battle starts 
+// orc attack once battle starts
 
 function endGame () {
   if (newPlayer.health <= 0) {
     $('.card--battleground').html(`<span class='youLose versus'>${orc.species} WINS</span>`)
   } else if (orc.health <= 0) {
     $('.card--battleground').html(`<span class='youWin versus'>${newPlayer.playerName} WINS</span>`)
-  } 
+  }
 }
 
 function battle () {
@@ -259,7 +259,7 @@ function orcAttack() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 1000;
     setTimeout(function() {
             orcAttack();
-            loop();  
+            loop();
     }, rand);
 }());
 
